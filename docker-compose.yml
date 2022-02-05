@@ -10,6 +10,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     container_name: 'app'
+    image: project-management-app:latest
     restart: unless-stopped
     working_dir: /var/www/html
     volumes:
