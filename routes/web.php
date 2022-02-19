@@ -17,4 +17,20 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Auth::routes(['register' => false, 'reset' => false]);
 
+Route::middleware('auth')->prefix('admin')->namespace('Admin')->group(function() {
+    Route::get('roles', 'RolesController@index')->name('admin.roles.index');
+    Route::get('roles/create', 'RolesController@create')->name('admin.roles.create');
+    Route::post('roles', 'RolesController@store')->name('admin.roles.store');
+    Route::get('roles/{id}/edit', 'RolesController@edit')->name('admin.roles.edit');
+    Route::patch('roles/{id}', 'RolesController@update')->name('admin.roles.update');
+
+    Route::get('permissions', 'PermissionsController@index')->name('admin.permissions.index');
+    Route::get('permissions/create', 'PermissionsController@create')->name('admin.permissions.create');
+    Route::post('permissions', 'PermissionsController@store')->name('admin.permissions.store');
+    Route::get('permissions/{id}/edit', 'PermissionsController@edit')->name('admin.permissions.edit');
+    Route::patch('permission/{id}', 'PermissionsController@update')->name('admin.permissions.update');
+    Route::delete('permision/{id}', 'PermissionsController@destroy')->name('admin.permissions.delete');
+
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
