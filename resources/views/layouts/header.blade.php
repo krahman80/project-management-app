@@ -11,6 +11,9 @@
               <a class="badge rounded-pill bg-info py-2 px-3 btn active"  aria-current="page" href="{{ route('home') }}">home</a>
             </li>
             <li class="nav-item mx-2">
+              <a class="badge rounded-pill bg-info py-2 px-3 btn active"  aria-current="page" href="{{ route('admin.users.index') }}">User</a>
+            </li>
+            <li class="nav-item mx-2">
                 <a class="badge rounded-pill bg-info py-2 px-3 btn active"  aria-current="page" href="{{ route('admin.roles.index') }}">roles</a>
             </li>
             <li class="nav-item mx-2">

@@ -13,7 +13,11 @@
    |         |-------Create Permission
    |         |-------Update Permission
    |
-   |-------Assign User To Roles
+   |-------Users
+   |         |-------Assign User To Roles
              
 
 ```
+
+## to Do's
+* assign user to roles

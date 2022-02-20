@@ -31,6 +31,11 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->group(function()
     Route::patch('permission/{id}', 'PermissionsController@update')->name('admin.permissions.update');
     Route::delete('permision/{id}', 'PermissionsController@destroy')->name('admin.permissions.delete');
 
+    Route::get('user', 'UsersController@index')->name('admin.users.index');
+    Route::get('user/assign/{id}', 'UsersController@assignUser')->name('admin.roles.assign');
+    Route::post('user/store', 'UsersController@storeAssignUser')->name('admin.roles.store.assign');
+    
+
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

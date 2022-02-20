@@ -65,7 +65,7 @@
             </div>
         </nav> --}}
 
-        <main class="py-4">
+        <main>
             @include('layouts.header')
             @yield('content')
         </main>
