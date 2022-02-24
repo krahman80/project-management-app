@@ -1,11 +1,12 @@
-# About Project-management-app
+# Project-management-app
 
 
 ## Navigation structure
+### admin role
 ```
 -Login
    |-------Dashboard
-   |-------Roles
+   |-------Roles 
    |         |-------Create Roles
    |         |-------Update Roles
    |
@@ -15,9 +16,56 @@
    |
    |-------Users
    |         |-------Assign User To Roles
+   |
+   |-------Project
+   |         |-------Create project
+   |         |-------Update project
+   |
+   |-------Task
+   |         |-------Create task
+   |         |-------Update task     
+   |
+   |-------My task
+   |         |-------Comment
              
 
+             
 ```
 
-## to Do's
-* assign user to roles
+### staff/developer roles
+```
+-Login
+   |-------Dashboard
+   |        |--------My task
+   |        
+             
+```
+
+## schema
+* Project
+   - id
+   - name
+   - status 
+   - deadline
+   - 
+
+* Task
+   - id
+   - title
+   - description
+   - start_data
+   - end_date
+   - status
+   - priority
+
+* UserTask
+   - user_id
+   - task_id
+
+* Comment
+   - id
+   - comment
+
+* CommentTask
+   - comment_id
+   - task_id
