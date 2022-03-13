@@ -35,7 +35,11 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->group(function()
     Route::get('user/assign/{id}', 'UsersController@assignUser')->name('admin.roles.assign');
     Route::post('user/store', 'UsersController@storeAssignUser')->name('admin.roles.store.assign');
     
+});
 
+Route::middleware('auth')->prefix('user')->namespace('User')->group(function() {
+    Route::get('my-task', 'TaskController@myTask')->name('user.mytask');
+    Route::get('my-task/{id}','TaskController@show')->name('user.mytask.detail');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

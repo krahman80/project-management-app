@@ -52,7 +52,7 @@
   --bs-body-bg-rgb: 248, 250, 252;
   --bs-font-sans-serif: "Nunito", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(52, 144, 220, 0.15), rgba(101, 116, 205, 0));
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 0.9rem;
   --bs-body-font-weight: 400;
@@ -18993,11 +18993,6 @@ fieldset:disabled .btn {
 
 .bi-filetype-xlsx::before {
   content: "\F793";
-}
-
-.custom-element {
-  color: #f8f9fa;
-  background-color: #212529;
 }
 
 .custom-body {
