@@ -41,4 +41,5 @@ class User extends Authenticatable
     public function task() {
         return $this->hasMany('App\Task');
     }
+
 }

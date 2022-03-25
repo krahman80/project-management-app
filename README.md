@@ -69,3 +69,4 @@
 * CommentTask
    - comment_id
    - task_id
+   - user_id

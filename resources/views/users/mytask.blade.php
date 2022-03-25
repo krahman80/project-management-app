@@ -29,7 +29,7 @@
                     <table class="table align-middle table-borderless table-sm mb-5">
                         <thead class="table-light">
                             <tr>
-                                <th colspan="6">
+                                <th colspan="7">
                                     <span class="text-muted">Project Name : </span>{{ $task->project->name }}
                                 </th>
                             </tr>
@@ -39,7 +39,8 @@
                             <th scope="col">Due Date&nbsp;<i class="bi bi-bell"></i></th>
                             <th>Days left</th>
                             <th>progress</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">flag</th>
+                            <th>Status</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -49,14 +50,15 @@
                             <td>{{ $task->due_date }}</td>
                             <td> ... days</td>
                             <td class="py-auto"><div class="progress">
-                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                              <div class="progress-bar" role="progressbar" style="width: {{ $task->progress }}%;" aria-valuenow="{{ $task->progress }}" aria-valuemin="0" aria-valuemax="100">{{ $task->progress }} %</div>
                             </div></td>
-                            <td><span class="badge text-dark {{$task->status_class}}">{{ $task->string_status }}</span></td>
+                            <td style="width: 90px;"><span class="badge text-dark {{$task->flag_class}}">{{ $task->flag }}</span></td>
+                            <td style="width: 100px;">{{ $task->status_string }}</td>
                           </tr>
                         </tbody>
                         <tfoot>
                           <tr>
-                            <td colspan="6">
+                            <td colspan="7">
                             </td>
                           </tr>
                         </tfoot>

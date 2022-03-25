@@ -25,25 +25,47 @@ class Task extends Model
         return $begin_date->format('M d Y');
     }
 
-    public function getStringStatusAttribute() {
-        $now = now();
+    public function getFlagAttribute() {
+        $now = Carbon::now();
         $begin_date = Carbon::parse($this->start_date);
+        $end_date = Carbon::parse($this->end_date);
+
         if ($now->lessThan($begin_date)){
-            return "not started";
-        }
-        else {
+            return "not started"; }
+        else if ($end_date->lessThan($now)) {
+            return "overdue";
+        } else {
             return "started";
         }
     }
 
-    public function getStatusClassAttribute() {
-        $now = now();
+    public function getFlagClassAttribute() {
+        $now = Carbon::now();
         $begin_date = Carbon::parse($this->start_date);
+        $end_date = Carbon::parse($this->end_date);
+
         if ($now->lessThan($begin_date)){
             return "bg-info";
         }
-        else {
+        else if ($end_date->lessThan($now)){
+            return "bg-danger text-white";
+        } else {
             return "bg-warning";
         }
+
     }
+
+    public function getStatusStringAttribute() {
+        if($this->status == 0) {
+            return "In Progress";
+        } else if ($this->status == 1) {
+            return "Pending";
+        } else {
+            return "Completed";
+        }
+    }
+
+    public function comments() {
+        return $this->belongsToMany('App\Comment');
+    }    
 }
