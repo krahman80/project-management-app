@@ -17,19 +17,29 @@
    |-------Users
    |         |-------Assign User To Roles
    |
-   |-------Project
-   |         |-------Create project
-   |         |-------Update project
-   |
-   |-------Task
-   |         |-------Create task
-   |         |-------Update task     
-   |
    |-------My task
    |         |-------Comment
              
 
              
+```
+### Project Manager Role
+```
+-Login 
+   |-------Dashboard
+   |-------Project
+   |         |-------List project
+   |         |-------Create project
+   |         |-------Update project
+   |
+   |-------Task
+   |         |-------List task 
+   |         |           |-------Show task
+   |         |                       |-------->Assign task
+   |         |                       |-------->Comment task     
+   |         |-------Create task
+   |         |-------Update task     
+   
 ```
 
 ### staff/developer roles
@@ -37,8 +47,11 @@
 -Login
    |-------Dashboard
    |        |--------My task
-   |        
-             
+   |        |--------list Task------->search task with filter
+   |        |            |--------Show task
+   |        |                        |--------->update task status
+   |        |                        |--------->comment status
+   |        |          
 ```
 
 ## schema
@@ -53,14 +66,13 @@
    - id
    - title
    - description
+   - project_id
+   - user_id
    - start_data
    - end_date
    - status
+   - progress
    - priority
-
-* UserTask
-   - user_id
-   - task_id
 
 * Comment
    - id

@@ -67,5 +67,10 @@ class Task extends Model
 
     public function comments() {
         return $this->belongsToMany('App\Comment');
-    }    
+    }
+    
+    public function scopeProgress($query)
+    {
+        return $query->where('status', '=', 0);
+    }
 }

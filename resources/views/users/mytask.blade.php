@@ -10,13 +10,14 @@
                       <div class="container-fluid">
                         <a class="navbar-brand" href="#">Task List</a>
                         <div>
-                          <form class="d-flex">
-                            <input class="form-control form-control-sm me-2" type="search" placeholder="Search" aria-label="Search">
-                            <select class="form-select form-select-sm me-2" aria-label=".form-select-sm example">
-                              <option selected>Status</option>
-                              <option value="1">started</option>
-                              <option value="2">pending</option>
-                              <option value="3">completed</option>
+                          <form class="d-flex" method="post" action="{{ route('user.mytask.search') }}">
+                            @csrf
+                            <input class="form-control form-control-sm me-2" type="search" placeholder="Search" aria-label="search" name="keyword">
+                            <select class="form-select form-select-sm me-2" aria-label=".form-select-sm example" name="status">
+                              <option value="" selected>status</option>
+                              <option value="0">in progress</option>
+                              <option value="1">pending</option>
+                              <option value="2">completed</option>
                             </select>
                             <button class="btn btn-sm btn-primary text-black" type="submit">Search</button>
                           </form>

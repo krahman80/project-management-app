@@ -41,8 +41,9 @@ Route::middleware('auth')->prefix('user')->namespace('User')->group(function() {
     Route::get('my-task', 'TaskController@myTask')->name('user.mytask');
     Route::get('my-task/{id}','TaskController@show')->name('user.mytask.detail');
     Route::patch('my-task/{id}', 'TaskController@update')->name('user.mytask.update');
-
+    Route::post('my-task/search','TaskController@search')->name('user.mytask.search');
     Route::post('comment/store', 'CommentController@store')->name('comment.store');
+
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -43,4 +43,13 @@ class TaskController extends Controller
 
         return redirect()->route('user.mytask.detail',['id' => $id])->with('status','task updated'); 
     }
+
+    public function search(Request $request) {
+        // dd($request->input('status'));
+        $user =  User::findOrFail(auth()->user()->id);
+
+        $mytask = $user->task()->where([['title', 'LIKE', '%'.$request->input('keyword').'%'], ['status', 'LIKE', '%'.$request->input('status').'%']])->paginate(5);
+
+        return view('users.mytask', ['tasks' => $mytask]);
+    }
 }
