@@ -27,7 +27,7 @@
 ```
 -Login 
    |-------Dashboard
-   |-------Project
+   |-------Project------------------->Add project
    |         |-------List project
    |         |-------Create project
    |         |-------Update project

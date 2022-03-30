@@ -14,7 +14,12 @@
               <div class="collapse navbar-collapse" id="navbarCollapse">
                   <div class="navbar-nav">
                     <a class="nav-item nav-link" href="{{ route('home') }}">home</a>
+                    @role('user')
                     <a class="nav-item nav-link" href="{{ route('user.mytask') }}">Task</a>
+                    @endrole
+                    @role('project-manager')
+                    <a class="nav-item nav-link" href="{{ route('project.index') }}">Project</a>
+                    @endrole
                     @role('admin')
                       <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Manages</a>

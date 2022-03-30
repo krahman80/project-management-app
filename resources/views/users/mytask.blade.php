@@ -47,8 +47,8 @@
                         <tbody>
                           <tr>
                             <td class="w-25"><a href="{{ route('user.mytask.detail',['id' => $task->id])}}" class="border-0 p-0 m-0">{{ $task->title }}</a></td>
-                            <td>{{ $task->begin_date }}</td>
-                            <td>{{ $task->due_date }}</td>
+                            <td>{{ $task->start_date->format('M d Y') }}</td>
+                            <td>{{ $task->end_date->format('M d Y') }}</td>
                             <td> ... days</td>
                             <td class="py-auto"><div class="progress">
                               <div class="progress-bar" role="progressbar" style="width: {{ $task->progress }}%;" aria-valuenow="{{ $task->progress }}" aria-valuemin="0" aria-valuemax="100">{{ $task->progress }} %</div>

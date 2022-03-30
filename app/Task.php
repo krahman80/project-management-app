@@ -7,6 +7,8 @@ use Carbon\Carbon;
 
 class Task extends Model
 {
+    protected $dates = ['start_date', 'end_date'];
+    
     public function Project() {
         return $this->belongsTo('App\Project');
     }
@@ -15,24 +17,12 @@ class Task extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function getDueDateAttribute() {
-        $due_date = Carbon::parse($this->end_date);
-        return $due_date->format('M d Y');
-    }
-
-    public function getBeginDateAttribute() {
-        $begin_date = Carbon::parse($this->start_date);
-        return $begin_date->format('M d Y');
-    }
-
     public function getFlagAttribute() {
         $now = Carbon::now();
-        $begin_date = Carbon::parse($this->start_date);
-        $end_date = Carbon::parse($this->end_date);
 
-        if ($now->lessThan($begin_date)){
+        if ($now->lessThan($this->start_date)){
             return "not started"; }
-        else if ($end_date->lessThan($now)) {
+        else if ($this->end_date->lessThan($now)) {
             return "overdue";
         } else {
             return "started";
@@ -41,13 +31,11 @@ class Task extends Model
 
     public function getFlagClassAttribute() {
         $now = Carbon::now();
-        $begin_date = Carbon::parse($this->start_date);
-        $end_date = Carbon::parse($this->end_date);
 
-        if ($now->lessThan($begin_date)){
+        if ($now->lessThan($this->start_date)){
             return "bg-info";
         }
-        else if ($end_date->lessThan($now)){
+        else if ($this->end_date->lessThan($now)){
             return "bg-danger text-white";
         } else {
             return "bg-warning";

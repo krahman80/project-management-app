@@ -11,7 +11,6 @@
                     @php
                      $i = 1;   
                     @endphp
-                    @include('layouts.msg')
                     <table class="table">
                         <thead>
                           <tr>
