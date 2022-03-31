@@ -49,6 +49,8 @@ Route::middleware('auth')->prefix('user')->namespace('User')->group(function() {
 Route::middleware('auth')->prefix('project')->namespace('Project')->group(function() {
     Route::get('project', 'ProjectController@index')->name('project.index');
     Route::get('project/{id}', 'ProjectController@show')->name('project.show');
+    Route::patch('project/{id}', 'ProjectController@update')->name('project.update');
+    Route::get('task/{id}', 'TaskController@show')->name('project.task.show');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

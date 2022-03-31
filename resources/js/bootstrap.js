@@ -37,6 +37,8 @@ import 'bootstrap/js/dist/tab';
 
 // window.Pusher = require('pusher-js');
 
+const flatpickr = require('flatpickr');
+
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
 //     key: process.env.MIX_PUSHER_APP_KEY,

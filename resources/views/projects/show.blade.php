@@ -5,6 +5,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-body">
+                  @include('layouts.msg')
                     <div class="row">
                         <div class="col-md-6">
                             <h4 class="card-title">
@@ -20,13 +21,17 @@
                         </div>
                         <div class="col-md-6">
                             <h4 class="card-title">Update project status</h5>
-                            <form method="post" action="" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('project.update', ['id' => $project->id])}}" enctype="multipart/form-data">
                                 @method('PATCH')
                                 @csrf
                                 <div class="row mb-1">
+                                  <label for="name" class="col-sm-3 form-label">Project Name</label>
+                                  <div class="col-sm-9">
+                                    <input type="text" class="form-control form-control-sm" name="name" id="name" value="{{ $project->name }}">
+                                  </div>
                                   <label for="deadline" class="col-sm-3 form-label">Deadline</label>
                                   <div class="col-sm-9">
-                                    <input type="text" class="form-control form-control-sm" name="progress" id="deadline" value="{{ $project->deadline }}">
+                                    <input type="date" class="form-control form-control-sm" name="deadline" id="deadline">
                                   </div>
                                 </div>
                                 <div class="row mb-1">
@@ -62,13 +67,14 @@
                                     <th>progress</th>
                                     <th scope="col">Flag</th>
                                     <th>Status</th>
+                                    <th>Action</th>
                                   </tr>
                                 </thead>
                                 <tbody>
         
                                   @forelse ($project->tasks as $key => $task)
                                     <tr>
-                                        <td class="w-25"><a href="#" class="border-0 p-0 m-0">{{ $task->title }}</a></td>
+                                        <td class="w-25">{{ $task->title }}</td>
                                         <td><i class="bi bi-file-person"></i> {{ $task->user->name }}</td>
                                         <td>{{ $task->start_date->format('M d Y') }}</td>
                                         <td>{{ $task->end_date->format('M d Y') }}</td>
@@ -78,6 +84,7 @@
                                         </div></td>
                                         <td style="width: 90px;"><span class="badge text-dark {{$task->flag_class}}">{{ $task->flag }}</span></td>
                                         <td style="width: 100px;">{{ $task->status_string }}</td>
+                                        <td><a href="{{ route('project.task.show', ['id' => $task->id]) }}"><i class="bi bi-pencil-square"></i></a></td>
                                     </tr>
                                       
                                   @empty
@@ -96,4 +103,9 @@
             </div>
         </div>
     </div>
+    @section('scripts')
+  <script>
+    flatpickr('#deadline');
+  </script>
+  @endsection
 @endsection

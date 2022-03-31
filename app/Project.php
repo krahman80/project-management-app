@@ -10,6 +10,8 @@ class Project extends Model
     
     protected $dates = ['deadline'];
 
+    protected $fillable = ['name', 'deadline', 'status'];
+
     public function tasks()
     {
         return $this->hasMany('App\Task');
