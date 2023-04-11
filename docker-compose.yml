@@ -4,13 +4,13 @@ services:
   app:
     build:
       args:
-      # replace with your user and uid
-        user: rahman
-        uid: 1000
+      # get your user and uid from system
+        user: ${USER}
+        uid: ${UID:-1000}
       context: .
       dockerfile: ./Dockerfile
     container_name: 'app'
-    image: project-management-app:latest
+    image: laravel-livewire-pm-app:latest
     restart: unless-stopped
     working_dir: /var/www/html
     volumes:
@@ -32,20 +32,19 @@ services:
     networks:
       - proxynet
 
-  maria-db:
+  db:
     image: mariadb:10.5.9
-    container_name: 'maria-db'
+    container_name: 'db'
     restart: unless-stopped
     ports:
       - '8040:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: 'secret'
-      MYSQL_USER: 'homestead'
-      MYSQL_PASSWORD: 'secret'
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'user'
       MYSQL_DATABASE: 'homestead'
     volumes:
       - db_data:/var/lib/mysql
-      # - ./my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - proxynet
 
@@ -54,12 +53,8 @@ services:
     container_name: adminer
     restart: unless-stopped
     depends_on:
-      - maria-db
+      - db
     environment:
-      ADMINER_DEFAULT_DB_DRIVER: mysql
-      ADMINER_DEFAULT_DB_HOST: maria-db
-      ADMINER_DEFAULT_DB_NAME: homestead
-      ADMINER_DEFAULT_SERVER: maria-db
       ADMINER_DESIGN: nette
       ADMINER_PLUGINS: tables-filter tinymce
     ports:
@@ -70,12 +65,6 @@ services:
 volumes:
   db_data:
 
-# networks:
-#   app-network:
-#     driver: bridge
-
 networks:
   proxynet:
     name: mynet
-    driver: bridge
-
