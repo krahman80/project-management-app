@@ -1,0 +1,35 @@
+// Variables
+@import 'variables';
+
+.cards-container {
+    column-break-inside: avoid;
+
+    .card {
+        display: inline-block;
+        overflow: visible;
+    }
+}
+
+@media #{$small-and-down} {
+    .cards-container {
+        @include column-count(1);
+    }
+}
+
+@media #{$medium-and-up} {
+    .cards-container {
+        @include column-count(2);
+    }
+}
+
+@media #{$large-and-up} {
+    .cards-container {
+        @include column-count(3);
+    }
+}
+
+
+/// Styles for demo
+.text-center {
+    text-align: center;
+}
