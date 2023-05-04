@@ -4,18 +4,18 @@ services:
   app:
     build:
       args:
-      # get your user and uid from system
+        # get your user and uid from system
         user: ${USER}
         uid: ${UID:-1000}
       context: .
       dockerfile: ./Dockerfile
     container_name: 'app'
-    image: laravel-livewire-pm-app:latest
+    image: laravel-pm-app:latest
     restart: unless-stopped
     working_dir: /var/www/html
     volumes:
       - .:/var/www/html
-      - ./php.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./docker/php.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - proxynet
 
@@ -24,9 +24,9 @@ services:
     container_name: nginx
     working_dir: /var/www/html
     volumes:
-        - .:/var/www/html
-        - ./docker/nginx/log:/var/log/nginx
-        - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - .:/var/www/html
+      - ./docker/nginx/log:/var/log/nginx
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     ports:
       - "8020:80"
     networks:
@@ -60,10 +60,11 @@ services:
     ports:
       - 8030:8080
     networks:
-    - proxynet
+      - proxynet
 
 volumes:
   db_data:
+
 
 networks:
   proxynet:
