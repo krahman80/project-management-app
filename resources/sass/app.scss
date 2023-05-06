@@ -1,8 +1,49 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
+// Variables
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.cards-container {
+    column-break-inside: avoid;
+
+    .card {
+        display: inline-block;
+        overflow: visible;
+    }
+}
+
+@media #{$small-and-down} {
+    .cards-container {
+        @include column-count(1);
+    }
+}
+
+@media #{$medium-and-up} {
+    .cards-container {
+        @include column-count(2);
+    }
+}
+
+@media #{$large-and-up} {
+    .cards-container {
+        @include column-count(3);
+    }
+}
+
+
+/// Styles for demo
+.text-center {
+    text-align: center;
+}

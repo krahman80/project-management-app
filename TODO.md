@@ -1,12 +1,11 @@
 # Used library
-
 * composer require spatie/laravel-permission
-* composer require laravel/ui
 * composer require livewire/livewire
-* npm install materialize-css@next
 
 ## Completed To Do
-
+### Installed library
+* composer require laravel/ui
+* npm install materialize-css@next
 
 ## To Do
 

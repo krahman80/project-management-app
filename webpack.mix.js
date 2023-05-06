@@ -12,5 +12,12 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    // .css('resources/css/helper.css', 'public/css')
     .sass('resources/sass/app.scss', 'public/css')
+    .copy('node_modules/materialize-css/dist/js/materialize.min.js', 'public/js')
+// .copy('node_modules/materialize-css/dist/css/materialize.min.css', 'public/css')
+mix.combine([
+    'node_modules/materialize-css/dist/css/materialize.min.css',
+    'resources/css/helper.min.css'
+], 'public/css/materialize.min.css')
     .sourceMaps();
