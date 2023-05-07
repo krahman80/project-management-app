@@ -21,6 +21,19 @@ Route::get('/template', function () {
     return view('template');
 });
 
+Route::get('/template-2', function () {
+    return view('project-detail-temp');
+});
+
+Route::get('/template-login', function () {
+    return view('template-login');
+});
+
+Route::get('/template-register', function () {
+    return view('template-register');
+});
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

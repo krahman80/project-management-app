@@ -48,8 +48,8 @@
             <li>
                 <div class="divider"></div>
             </li>
-            <li><a class="subheader">Login</a></li>
-            <li><a class="waves-effect" href="#!">Register</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a class="waves-effect" href="#">Register</a></li>
         </ul>
     </header>
 
@@ -66,6 +66,12 @@
         </div>
     </footer>
     @stack('script')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, {});
+        });
+    </script>
 </body>
 
 </html>
