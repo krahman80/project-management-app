@@ -8,11 +8,12 @@
             </div>
             <div class="card-content">
                 <span class="card-title black-text">Sign In</span>
-                <form>
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="row">
                         <div class="input-field col s12">
                             <input placeholder="Email" id="email" type="email" class="validate" required>
-                            <label for="email" class="active">Email</label>
+                            <label for="email" class="active">{{ __('Email Address') }}</label>
                         </div>
                     </div>
                     <div class="row">

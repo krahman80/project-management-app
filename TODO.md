@@ -12,13 +12,11 @@
   2. create layouts (app.blade.php)
   3. create project detail page
 * create login, register template
+* convert bootstrap template (login, register, pass-reset) to materialize css 
 
 ## Outstanding To Do
-
+* convert dashboard into materialize css
 * install above libraries
-
-
-* convert bootstrap template (login, register) to materialize css 
 * create migration models for this tables
   1. projects
   2. tasks
