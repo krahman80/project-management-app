@@ -1,19 +1,34 @@
-// Media Query Ranges
-$small-screen-up: 601px !default;
-$medium-screen-up: 993px !default;
-$large-screen-up: 1201px !default;
-$small-screen: 600px !default;
-$medium-screen: 992px !default;
-$large-screen: 1200px !default;
+$font-size-root: null;
+$font-size-base: 0.9rem; // Assumes the browser default, typically `16px`
+$font-size-xs: $font-size-base * .075;
+$font-size-sm: $font-size-base * .825;
+$font-size-lg: $font-size-base * 1.25;
+$line-height-base: 1.7;
 
-$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
-$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
-$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
-$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
-$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+//remove underline below link
+$link-decoration: none;
 
-@mixin column-count($ct) {
-    -webkit-column-count: $ct;
-    -moz-column-count: $ct;
-    column-count: $ct;
-}
+// font
+$font-family-sans-serif: 'Lato', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.7;
+
+// overide input shadow
+// $input-box-shadow: none;
+$input-focus-box-shadow: none;
+// $input-btn-focus-box-shadow: none;
+$form-select-box-shadow: none;
+$form-select-focus-box-shadow: none;
+$btn-focus-box-shadow: none;
+$form-check-input-focus-box-shadow: none;
+$form-range-thumb-focus-box-shadow: none;
+$pagination-focus-box-shadow: none;
+$btn-close-focus-shadow: none;
+$btn-box-shadow: none;
+// $btn-active-box-shadow: none;
+
+$btn-active-box-shadow: none !important;
+$input-box-shadow: none !important;
+$input-btn-focus-box-shadow: none !important;
+$navbar-toggler-transition: none !important;
+$dropdown-box-shadow: none !important;
