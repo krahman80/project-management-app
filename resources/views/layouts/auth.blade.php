@@ -12,38 +12,17 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/materialize.min.js') }}" defer></script>
-
-    <!-- Fonts -->
 
     <!-- Styles -->
-    <link href="{{ asset('css/materialize.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        {{-- <nav class="nav-extended blue-grey darken-1">
-            <div class="nav-wrapper">
-                <div class="container">
-                    <a href="index.html" class="brand-logo">PM</a>
-                </div>
-            </div>
-        </nav> --}}
-    </header>
 
-    <main>
+    <main class="vh-100 d-flex justify-content-center align-items-center">
         @yield('content')
     </main>
 
-    <footer class="page-footer white">
-        {{-- <div class="footer-copyright">
-            <div class="container">
-                <span class="black-text">© 2014 Copyright Text</span>
-
-            </div>
-        </div> --}}
-    </footer>
     @stack('script')
 
 </body>
