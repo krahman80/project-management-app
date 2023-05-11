@@ -1,8 +1,8 @@
 <h1 align="center">
-  ProjectWise
+  ProMan
 </h1>
 <br/>
-<h4 align="center">ProjectWise is a project Management App using laravel</h4>
+<h4 align="center">ProMan is a project Management App using laravel and livewire</h4>
 <br/>
 <p align="center">
   <a href="#key-features">Key Features</a> •

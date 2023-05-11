@@ -5,12 +5,14 @@
     <div class="row d-flex justify-content-center">
         <div class="col-12 col-md-6 col-lg-4">
             <div class="card bg-white shadow-sm">
-                <div class="card-body pb-5 border-top border-3 border-dark">
+                <div class="card-body pb-4 border-top border-3 border-dark">
                     <form method="POST" action="{{ route('login') }}" class="mb-3 p-2 mt-md-2">
                         @csrf
+
                         <img src="{{ asset('pmb.svg') }}" alt="pmb" class="mx-auto d-block mb-2">
+
                         <div class="mb-3">
-                            <label for="email" class="form-label ">{{ __('Email Address')}}</label>
+                            <label for="email" class="form-label">{{ __('Email Address')}}</label>
                             <input id="email" type="email"
                                 class="form-control form-control-sm @error('email') is-invalid @enderror" name="email"
                                 value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -22,7 +24,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="password" class="form-label ">{{ __('Password')}}</label>
+                            <label for="password" class="form-label">{{ __('Password')}}</label>
                             <input id="password" type="password"
                                 class="form-control form-control-sm @error('password') is-invalid @enderror"
                                 name="password" required autocomplete="current-password">

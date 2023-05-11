@@ -87,7 +87,8 @@
                         <div class="form-label mt-2 mb-0 p-0">
                             <p class="mb-0 small">Have an account? <a href="{{ route('login') }}"
                                     class="text-secondary fw-bold">Login</a></p>
-                            <p class="p-0 small">back <a href="{{ url('/') }}" class="text-secondary"></i>Home</a>
+                            <p class="p-0 small">back <a href="{{ url('/') }}"
+                                    class="text-secondary fw-bold"></i>Home</a>
                             </p>
 
                         </div>
