@@ -22,6 +22,10 @@ Route::get('/project-list', function () {
     return view('project-list');
 });
 
+Route::get('/project-detail', function () {
+    return view('project-detail');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

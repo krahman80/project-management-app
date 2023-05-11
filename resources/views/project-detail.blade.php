@@ -9,7 +9,16 @@
         <div class="row row-cols-1">
             <div class="col">
                 <div class="card shadow-sm">
-                    <div class="card-header">Light card title</div>
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between">
+                            <div>Light card title</div>
+                            <div>
+                                <a href="#" class="link-primary"><i class="bi bi-pencil"></i></a>&nbsp;
+                                <a href="#" class="link-danger"><i class="bi bi-x-square"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
                     <div class="card-body">
                         <!-- <h5 class="card-title">Light card title</h5> -->
                         @if (session('status'))
@@ -42,8 +51,9 @@
                             <div> <span class="badge rounded-pill bg-dark">member 1</span>
                                 <span class="badge rounded-pill bg-light text-dark">member 2</span>
                             </div>
-                            <div> <span class="badge bg-primary text-white">edit</span>
-                                <span class="badge bg-danger text-white">delete</span>
+                            <div>
+                                <a href="#" class="link-primary"><i class="bi bi-pencil"></i></a>&nbsp;
+                                <a href="#" class="link-danger"><i class="bi bi-x-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -64,8 +74,8 @@
                                 <span class="badge rounded-pill bg-dark">task owner 1</span>
                             </div>
                             <div>
-                                <span class="badge bg-primary text-white">edit</span>
-                                <span class="badge bg-danger text-white">delete</span>
+                                <a href="#" class="link-primary"><i class="bi bi-pencil"></i></a>&nbsp;
+                                <a href="#" class="link-danger"><i class="bi bi-x-square"></i></a>
                             </div>
                         </div>
                     </div>

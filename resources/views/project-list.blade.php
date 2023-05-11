@@ -9,7 +9,16 @@
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
             <div class="col">
                 <div class="card border-dark shadow-sm">
-                    <div class="card-header border-secondary"><a href="#">Header 1</a></div>
+                    <div class="card-header border-secondary">
+                        <div class="d-flex justify-content-between">
+                            <div><a href="#">header 1</a>
+                            </div>
+                            <div>
+                                <a href="#" class="link-primary"><i class="bi bi-pencil"></i></a>&nbsp;
+                                <a href="#" class="link-danger"><i class="bi bi-x-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card-body">
                         {{-- <h5 class="card-title">Light card title</h5> --}}
                         <p class="card-text">Some quick example text to build on the card title and make up
@@ -25,16 +34,25 @@
                         <p class="card-text">Some quick example text to build on the card title and make up
                             the bulk of the card's content.</p>
                     </div>
-                    <div class="card-footer bg-transparent ">Footer</div>
+                    <div class="card-footer bg-transparent ">
+                        <div class="d-flex justify-content-between">
+                            <div>footer
+                            </div>
+                            <div>
+                                <a href="#" class="link-primary"><i class="bi bi-pencil"></i></a>&nbsp;
+                                <a href="#" class="link-danger"><i class="bi bi-x-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-header">Header 3</div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural
-                            lead-in to additional content.</p>
+                        {{-- <h5 class="card-title">Success card title</h5> --}}
+                        <p class="card-text">Some quick example text to build on the card title and make up
+                            the bulk of the card's content.</p>
                     </div>
                 </div>
             </div>

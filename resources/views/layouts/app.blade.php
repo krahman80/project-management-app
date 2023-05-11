@@ -16,10 +16,19 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Styles -->
+    <link href="{{ asset('css/color.css') }}" rel="stylesheet">
+
     <style>
         /* main>.container {
             padding: 60px 15px 0;
         } */
+
+        .navbar-toggler:focus,
+        .navbar-toggler-icon:focus {
+            outline: none;
+            box-shadow: none;
+        }
     </style>
 </head>
 

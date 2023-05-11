@@ -14,11 +14,22 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $pieces = explode(' ', $this->faker->name());
+        $last_word = array_pop($pieces);
+        $fin = $last_word . $this->faker->unique()->word();
+
+        // $userName = $this->faker->userName;
+        // $uniqueSuffix = $this->faker->unique()->word;
+        // $domain = 'mail.com';
+        // $uniqueFakeEmail = "$userName@$domain";
+
         return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
+            'name' => $fin,
+            // 'email' => $this->faker->unique()->safeEmail(),
+            'email' => $fin . "@mail.com",
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => bcrypt('password'),
             'remember_token' => Str::random(10),
         ];
     }
