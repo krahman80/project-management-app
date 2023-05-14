@@ -95,7 +95,7 @@
 
     <main class="flex-shrink-0 mb-4">
         <div class="container w-75">
-            {{ $slot }}
+            @yield('content')
         </div>
     </main>
 

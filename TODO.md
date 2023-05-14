@@ -16,8 +16,14 @@
 * create users, projects, tasks seeder
 
 ## Outstanding To Do
+* install :
+  1. npm install pickaday/pickadate --save-dev
+  2. npm install chartjs --save-dev
+  3. composer require cviebrock/eloquent-sluggable
 * Create Dashboard Component
+* Slug field on project
 * Create list-project component
 * create migration models for this tables
   3. comment_task
-* create relations for each tables  
+* create relations for each tables
+
