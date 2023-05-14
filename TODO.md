@@ -16,6 +16,8 @@
 * create users, projects, tasks seeder
 
 ## Outstanding To Do
+* Create Dashboard Component
+* Create list-project component
 * create migration models for this tables
   3. comment_task
 * create relations for each tables  

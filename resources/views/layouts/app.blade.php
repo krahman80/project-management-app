@@ -30,6 +30,8 @@
             box-shadow: none;
         }
     </style>
+
+    @livewireStyles
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -93,7 +95,8 @@
 
     <main class="flex-shrink-0 mb-4">
         <div class="container w-75">
-            @yield('content')
+            {{-- @yield('content') --}}
+            {{ $slot }}
         </div>
     </main>
 
@@ -103,6 +106,7 @@
         </div>
     </footer>
 
+    @livewireScripts
 </body>
 
 </html>

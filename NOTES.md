@@ -6,79 +6,47 @@
 ```
 -Login
    |-------Dashboard
-   |-------Roles 
-   |         |-------Create Roles
-   |         |-------Update Roles
+   |-------Project list 
+   |         |-------Filter project
+   |         |-------add edit project
    |
-   |-------Permission
-   |         |-------Create Permission
-   |         |-------Update Permission
+   |-------Project Detail
+   |         |-------add project member
+   |         |-------add edit task
    |
-   |-------Users
-   |         |-------Assign User To Roles
-   |
-   |-------My task
-   |         |-------Comment
-             
-
-             
-```
-### Project Manager Role
-```
--Login 
-   |-------Dashboard
-   |-------Project------------------->Add project
-   |         |-------List project
-   |         |-------Create project
-   |         |-------Update project
-   |
-   |-------Task
-   |         |-------List task 
-   |         |           |-------Show task
-   |         |                       |-------->Assign task/re assign task
-   |         |                       |-------->Comment task     
-   |         |-------Create task
-   |         |-------Update task     
-   
-```
-
-### staff/developer roles
-```
--Login
-   |-------Dashboard
-   |        |--------My task
-   |        |--------list Task------->search task with filter
-   |        |            |--------Show task
-   |        |                        |--------->update task status
-   |        |                        |--------->comment status
-   |        |          
+   |-------Project Comment
+   |         |-------add comments
+   |         |-------edit comments
 ```
 
 ## schema
 * Project
    - id
    - name
-   - status 
-   - deadline
-   - 
+   - owner_id (fk)
+   - start
+   - end
+   - priority
 
 * Task
    - id
-   - title
+   - name
    - description
-   - project_id
-   - user_id
-   - start_data
+   - project_id (fk)
+   - owner_id (fk)
+   - start_date
    - end_date
    - status
-   - progress
-   - priority
 
 * Comment
    - id
-   - comment
+   - user_id
+   - task_id
+   - body
 
-* CommentTask
+<!-- 
+   * CommentTask
    - comment_id
    - task_id
-   - user_id
+   - user_id 
+-->

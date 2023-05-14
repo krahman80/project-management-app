@@ -26,6 +26,13 @@ Route::get('/project-detail', function () {
     return view('project-detail');
 });
 
+Route::get('/task-comment', function () {
+    return view('task-comment');
+});
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function () {
+    // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', App\Http\Livewire\Dashboard::class);
+});
