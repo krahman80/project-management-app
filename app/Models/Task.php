@@ -9,8 +9,15 @@ class Task extends Model
 {
     use HasFactory;
 
+    protected $dates = ['start_date', 'end_date'];
+
     public function project()
     {
         return $this->belongsTo(Project::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

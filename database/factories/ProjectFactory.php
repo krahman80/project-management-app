@@ -33,9 +33,12 @@ class ProjectFactory extends Factory
         $from = Carbon::instance($this->faker->dateTimeBetween('1 months', '+3 months'));
         $to = (clone $from)->addMonth(random_int(5, 6));
 
+        $name = $this->faker->city() . " " . Arr::random($suffix);
+
         return [
-            'name' => $this->faker->city() . " " . Arr::random($suffix),
+            'name' => $name,
             'description' => $this->faker->paragraph(2),
+            'slug' => $str = str_replace(" ", "-", $name),
             'owner_id' => function () {
                 return User::factory()->create()->id;
             },

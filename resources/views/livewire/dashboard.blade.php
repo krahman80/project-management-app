@@ -38,17 +38,21 @@
                                 </thead>
                                 <tbody>
 
-                                    @foreach ($tasks as $task)
+                                    @forelse ($tasks as $task)
                                     <tr>
-                                        <th scope="row">{{ $task->id }}</th>
-                                        <td><a href="#" class="link-primary">{{ $task->name }}</a></td>
+                                        <th scope="row">{{ $loop->iteration }}.</th>
+                                        <td><a href="{{ $task->id }}" class="link-primary">{{ $task->name }}</a></td>
                                         <td>{{ Str::limit($task->description, 50) }}</td>
                                         <td>{{ $task->project->name }}</td>
-                                        <td>{{ $task->start_date }}</td>
-                                        <td>{{ $task->end_date }}</td>
+                                        <td>{{ $task->start_date->toDateString() }}</td>
+                                        <td>{{ $task->end_date->toDateString() }}</td>
                                         <td>{{ $task->status }}</td>
                                     </tr>
-                                    @endforeach
+                                    @empty
+                                    <tr>
+                                        <th scope="row" colspan="6">No task found</td>
+                                    </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
 
@@ -61,8 +65,16 @@
         </div>
     </div>
     <div class="col-sm-2">
-        <h3 class="mt-5 mb-4">Sidebar</h3>
-        <form action="">
+        <h3 class="mt-5 mb-4">My Project</h3>
+        <ul class="list-group list-group-flush">
+            @forelse ($projects as $project)
+            <li class="list-group-item"><a href="{{ route('projects.show', ['slug' => $project->slug]) }}">{{
+                    $project->name }}</a></li>
+            @empty
+            <li class="list-group-item">No Project found.</li>
+            @endforelse
+        </ul>
+        {{-- <form action="">
             <div class="mb-3">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -77,6 +89,6 @@
                     </label>
                 </div>
             </div>
-        </form>
+        </form> --}}
     </div>
 </div>

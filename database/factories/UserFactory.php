@@ -24,9 +24,9 @@ class UserFactory extends Factory
         // $uniqueFakeEmail = "$userName@$domain";
 
         return [
-            'name' => $fin,
+            'name' => strtolower($fin),
             // 'email' => $this->faker->unique()->safeEmail(),
-            'email' => $fin . "@mail.com",
+            'email' => strtolower($fin) . "@mail.com",
             'email_verified_at' => now(),
             // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'password' => bcrypt('password'),

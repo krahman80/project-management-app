@@ -4,6 +4,7 @@
 * composer require laravel/ui
 * composer require spatie/laravel-permission
 * composer require livewire/livewire
+* composer require cviebrock/eloquent-sluggable
 * create basic project design
   1. create project list page
   2. create layouts (app.blade.php)
@@ -19,9 +20,10 @@
 * install :
   1. npm install pickaday/pickadate --save-dev
   2. npm install chartjs --save-dev
-  3. composer require cviebrock/eloquent-sluggable
+  3. install spatie media library? (responsive images)
 * Create Dashboard Component
 * Slug field on project
+* Add soft deletes
 * Create list-project component
 * create migration models for this tables
   3. comment_task
