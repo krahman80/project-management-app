@@ -17,19 +17,19 @@
                     <div class="card-body">
 
                         <div class="input-group my-2 w-50">
-                            <input type="text" class="form-control form-control-sm" placeholder="keyword"
-                                aria-label="keyword" aria-describedby="button-addon2">
+                            <input type="text" class="form-control" placeholder="keyword" aria-label="keyword"
+                                aria-describedby="button-addon2">
                             <button class="btn btn-sm btn-outline-secondary" type="button"
                                 id="button-addon2">Button</button>
                         </div>
 
                         <div class="table-responsive">
-                            <table class="table table-striped border border-1 small mt-3 table-sm">
+                            <table class="table table-striped border border-1 mt-3 table-sm">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">name</th>
-                                        <th scope="col">desc</th>
+                                        {{-- <th scope="col">desc</th> --}}
                                         <th scope="col">project name</th>
                                         <th scope="col">start</th>
                                         <th scope="col">end</th>
@@ -42,7 +42,7 @@
                                     <tr>
                                         <th scope="row">{{ $loop->iteration }}.</th>
                                         <td><a href="{{ $task->id }}" class="link-primary">{{ $task->name }}</a></td>
-                                        <td>{{ Str::limit($task->description, 50) }}</td>
+                                        {{-- <td>{{ Str::limit($task->description, 50) }}</td> --}}
                                         <td>{{ $task->project->name }}</td>
                                         <td>{{ $task->start_date->toDateString() }}</td>
                                         <td>{{ $task->end_date->toDateString() }}</td>
@@ -50,7 +50,7 @@
                                     </tr>
                                     @empty
                                     <tr>
-                                        <th scope="row" colspan="6">No task found</td>
+                                        <th scope="row" colspan="5">No task found</td>
                                     </tr>
                                     @endforelse
                                 </tbody>
@@ -58,6 +58,12 @@
 
                         </div>
                         {{-- You are logged in! --}}
+
+                        <button class="btn btn-sm btn-secondary" type="button"
+                            wire:click.defer="$emit('showModal', 'mymodal')">
+                            {{ __('show modal') }}
+                        </button>
+
                     </div>
 
                 </div>

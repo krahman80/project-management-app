@@ -10,8 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -31,14 +30,14 @@
         }
     </style>
 
-    @livewireStyles
+    <livewire:styles />
 </head>
 
 <body class="d-flex flex-column h-100">
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
         <div class="container w-75">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ route('home') }}">
                 {{-- {{ config('app.name', 'Laravel') }} --}}
                 <img src="{{ asset('pm.svg')}}">
             </a>
@@ -105,7 +104,10 @@
         </div>
     </footer>
 
-    @livewireScripts
+    <livewire:modals />
+    <livewire:scripts />
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

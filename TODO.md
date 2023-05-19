@@ -5,6 +5,7 @@
 * composer require spatie/laravel-permission
 * composer require livewire/livewire
 * composer require cviebrock/eloquent-sluggable
+* composer require bastinald/laravel-livewire-modals
 * create basic project design
   1. create project list page
   2. create layouts (app.blade.php)
@@ -15,14 +16,27 @@
   2. tasks
 * create users, projects, tasks factory
 * create users, projects, tasks seeder
+* create dashboard component
+* create projectTask component
+* slug field on project
 
 ## Outstanding To Do
 * install :
   1. npm install pickaday/pickadate --save-dev
   2. npm install chartjs --save-dev
-  3. install spatie media library? (responsive images)
-* Create Dashboard Component
-* Slug field on project
+  3. composer require "spatie/laravel-medialibrary:^10.0.0"
+
+* projectTask component
+  * project owner
+    1. link edit project to edit project page
+    3. show edit task for project owner only
+    6. add user to project 
+  * all member
+    1. show task owner
+    2. show project member
+  * task owner
+    4. show task update status for task owner only
+
 * Add soft deletes
 * Create list-project component
 * create migration models for this tables
