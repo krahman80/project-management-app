@@ -33,22 +33,21 @@
                     </div>
 
                     <div class="card-footer bg-transparent ">
-                        <div class="d-flex justify-content-between">
-                            <div><span class="badge bg-light text-dark">user a</span>
-                                <span class="badge bg-light text-dark">user b</span>
-                                <span class="badge bg-light text-dark">user</span>
-                            </div>
+                        <div><span class="text-secondary small">project member : </span>
+                            @foreach ($projects as $project)
+                            @forelse ($project->tasks as $task)
+                            <span class="badge bg-light text-dark">{{ $task->user->name }}</span>
+                            @empty
+                            <span class="badge bg-light text-dark">this project has no task owner</span>
+                            @endforelse
+                            @endforeach
 
-                            <div>
-                                <a href="#" class="link-primary"><i class="bi bi-file-person"></i></a>
-                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
-
 
         <div class="row row-cols-1 ">
             <div class="col mt-5 mb-3">
@@ -93,9 +92,10 @@
                     <div class="card-footer bg-transparent border border-0">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <span class="badge rounded-pill bg-info">
-                                    {{ $task->user->name }}
-                                </span>
+                                {{-- <span class="text-secondary small">task owner : </span> --}}
+                                <a href="#" class="text-link"><span class="badge rounded-pill bg-info">
+                                        {{ $task->user->name }}
+                                    </span></a>
                             </div>
                             <div>
                                 <a href="#" class="link-success"><i class="bi bi-journal-check"></i></a>&nbsp;

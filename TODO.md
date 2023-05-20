@@ -21,11 +21,7 @@
 * slug field on project
 
 ## Outstanding To Do
-* install :
-  1. npm install pickaday/pickadate --save-dev
-  2. npm install chartjs --save-dev
-  3. composer require "spatie/laravel-medialibrary:^10.0.0"
-
+* split Project task into smaller component
 * projectTask component
   * project owner
     1. link edit project to edit project page
@@ -37,9 +33,18 @@
   * task owner
     4. show task update status for task owner only
 
+* TaskComment component
+  * create migration models for this tables
+    1. comment_task
+  * task owner
+    1. add new comments
+    2. only project member and project owner can comments
+
 * Add soft deletes
 * Create list-project component
-* create migration models for this tables
-  3. comment_task
 * create relations for each tables
+* install :
+  1. npm install pickaday/pickadate --save-dev
+  2. npm install chartjs --save-dev
+  3. composer require "spatie/laravel-medialibrary:^10.0.0"
 
