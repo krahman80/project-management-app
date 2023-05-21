@@ -19,9 +19,13 @@
 * create dashboard component
 * create projectTask component
 * slug field on project
+* split Project task into smaller component
+* Add new Task
+* validate new Task
 
 ## Outstanding To Do
-* split Project task into smaller component
+* add datepicker to new task
+* add authorization to new task
 * projectTask component
   * project owner
     1. link edit project to edit project page

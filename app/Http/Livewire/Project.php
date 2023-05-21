@@ -9,11 +9,20 @@ class Project extends Component
 {
     public $project;
 
+    protected $listeners = [
+        'taskAdded' => '$refresh'
+    ];
+
+    // public function taskAdded($slug)
+    // {
+    //     $this->mount($slug);
+    //     $this->render();
+    // }
 
     public function mount($slug)
     {
         // nested eager loading
-        $this->project = ModelsProject::with('tasks.user')->where('slug', $slug)->get();
+        $this->project = ModelsProject::with(['tasks.user', 'owner'])->where('slug', $slug)->get();
     }
     public function render()
     {

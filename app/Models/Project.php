@@ -18,6 +18,11 @@ class Project extends Model
         return $this->hasMany(Task::class);
     }
 
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'owner_id', 'id');
+    }
+
     public function sluggable(): array
     {
         return [
