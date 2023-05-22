@@ -20,23 +20,23 @@
 * create projectTask component
 * slug field on project
 * split Project task into smaller component
-* Add new Task
-* validate new Task
-
-## Outstanding To Do
-* add datepicker to new task
-* add authorization to new task
-* projectTask component
-  * project owner
-    1. link edit project to edit project page
-    3. show edit task for project owner only
-    6. add user to project 
+* project task component
   * all member
     1. show task owner
     2. show project member
-  * task owner
-    4. show task update status for task owner only
+* project task component (project owner role)
+  1. add new task
+  2. validate new task
+  3. save new task
+  4. edit task form
+  5. validate edited task
+  6. update edit task
 
+## Outstanding To Do
+* project task component (project owner role)
+  7. update status action (planned, in progress, completed)
+* add datepicker to new task
+* add authorization to new task
 * TaskComment component
   * create migration models for this tables
     1. comment_task

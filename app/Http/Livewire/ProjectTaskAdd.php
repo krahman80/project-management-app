@@ -2,10 +2,10 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Project;
 use App\Models\Task;
 use App\Models\User;
 use Livewire\Component;
+
 
 class ProjectTaskAdd extends Component
 {
@@ -25,11 +25,13 @@ class ProjectTaskAdd extends Component
     protected $rules = [
         'name' => 'required|min:6',
         'description' => 'required|min:10',
-        'owner_id' => 'integer',
+        // 'owner_id' => 'integer',
+        'owner_id' =>  'required|not_in:0',
         'project_id' => 'integer',
-        'start_date' => 'required|date_format:Y-m-d',
-        'end_date' => 'required|date_format:Y-m-d',
-        'status' => 'string',
+        'start_date' => 'required|date_format:Y-m-d|after:tomorrow',
+        'end_date' => 'required|date_format:Y-m-d|after:start_date',
+        // 'status' => 'string',
+        'status' => 'required|not_in:0',
     ];
 
     public function mount($project_id)

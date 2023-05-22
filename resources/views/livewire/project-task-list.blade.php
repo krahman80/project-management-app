@@ -30,7 +30,11 @@
                 </div>
                 <div>
                     <a href="#" class="link-success"><i class="bi bi-journal-check"></i></a>&nbsp;
-                    <a href="#" class="link-primary"><i class="bi bi-pencil"></i></a>&nbsp;
+                    {{-- <a href="#" class="link-primary"><i class="bi bi-pencil"></i></a>&nbsp; --}}
+                    &nbsp;<button class="btn btn-sm" type="button"
+                        wire:click.defer="$emit('showModal', 'project-task-edit', '{{ $task->id }}')">
+                        <i class="bi bi-pencil text-primary"></i>
+                    </button>&nbsp;
                     <a href="#" class="link-danger"><i class="bi bi-x-square"></i></a>
                 </div>
             </div>

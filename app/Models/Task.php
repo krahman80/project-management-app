@@ -11,7 +11,12 @@ class Task extends Model
 
     protected $fillable = ['name', 'description', 'owner_id', 'project_id', 'start_date', 'end_date', 'status'];
 
-    protected $dates = ['start_date', 'end_date'];
+    // protected $dates = ['start_date', 'end_date'];
+
+    protected $casts = [
+        'start_date' => 'date:Y-m-d',
+        'end_date' => 'date:Y-m-d'
+    ];
 
     public function project()
     {
