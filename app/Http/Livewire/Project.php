@@ -10,7 +10,8 @@ class Project extends Component
     public $project;
 
     protected $listeners = [
-        'taskAdded' => '$refresh'
+        'taskAdded' => '$refresh',
+        'taskStatus' => '$refresh'
     ];
 
     // public function taskAdded($slug)

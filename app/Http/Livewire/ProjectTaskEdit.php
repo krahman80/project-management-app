@@ -15,7 +15,7 @@ class ProjectTaskEdit extends Component
         'task.name' => 'required|min:6',
         'task.description' => 'required|min:10',
         'task.owner_id' =>  'required|not_in:0',
-        'task.start_date' => 'required|date_format:Y-m-d|after:tomorrow',
+        'task.start_date' => 'required|date_format:Y-m-d',
         'task.end_date' => 'required|date_format:Y-m-d|after:task.start_date',
         'task.status' => 'required|not_in:0',
     ];

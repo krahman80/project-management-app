@@ -86,7 +86,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
                 {{-- <button type="button" class="btn btn-primary">Save Task</button> --}}
-                <button type="submit" class="btn btn-sm btn-primary">Save Task</button>
+                <button type="submit" wire:loading.attr="disabled" class="btn btn-sm btn-primary">Save Task</button>
             </div>
         </div>
     </form>

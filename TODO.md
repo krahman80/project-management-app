@@ -34,6 +34,8 @@
 
 ## Outstanding To Do
 * project task component (project owner role)
+* add notification after action
+* add notification before action
   7. update status action (planned, in progress, completed)
 * add datepicker to new task
 * add authorization to new task

@@ -26,7 +26,7 @@
                                 wire:click.defer="$emit('showModal', 'ProjectTaskAdd', '{{ $project_id }}')"><i
                                     class="bi bi-plus-lg"></i></a> --}}
                             <button class="btn btn-sm btn-light" type="button"
-                                wire:click.defer="$emit('showModal', 'project-task-add', '{{ $project_id }}')">
+                                wire:click="$emit('showModal', 'project-task-add', '{{ $project_id }}')">
                                 <i class="bi bi-plus-lg"></i>&nbsp;New Task
                             </button>
                         </div>

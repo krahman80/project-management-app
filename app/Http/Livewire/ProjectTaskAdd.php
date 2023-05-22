@@ -28,7 +28,7 @@ class ProjectTaskAdd extends Component
         // 'owner_id' => 'integer',
         'owner_id' =>  'required|not_in:0',
         'project_id' => 'integer',
-        'start_date' => 'required|date_format:Y-m-d|after:tomorrow',
+        'start_date' => 'required|date_format:Y-m-d',
         'end_date' => 'required|date_format:Y-m-d|after:start_date',
         // 'status' => 'string',
         'status' => 'required|not_in:0',

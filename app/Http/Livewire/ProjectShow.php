@@ -9,7 +9,8 @@ class ProjectShow extends Component
     public $project;
 
     protected $listeners = [
-        'taskAdded' => '$refresh'
+        'taskAdded' => '$refresh',
+        'taskStatus' => '$refresh'
     ];
 
     public function render()

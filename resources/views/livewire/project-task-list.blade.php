@@ -2,9 +2,11 @@
     <div class="card border mb-4">
 
         <div class="card-body">
-            <h5>
-                <a href="#" class="link-primary">{{ $task->name }}</a>
-            </h5>
+            <div class="d-flex justify-content-between">
+                <h5><a href="#" class="link-primary">{{ $task->name }}</a></h5>
+                <span class="text-muted small" wire:loading.delay.longer>Loading...</span>
+            </div>
+
             <p>
                 <span class="text-dark">status&nbsp;:&nbsp;</span><span
                     class="fst-italic {{ $task->status == 'completed' ? 'text-success' : 'text-warning' }}">{{
@@ -29,13 +31,15 @@
                         </span></a>
                 </div>
                 <div>
-                    <a href="#" class="link-success"><i class="bi bi-journal-check"></i></a>&nbsp;
-                    {{-- <a href="#" class="link-primary"><i class="bi bi-pencil"></i></a>&nbsp; --}}
-                    &nbsp;<button class="btn btn-sm" type="button"
+                    <button class="btn btn-sm" type="button" wire:click.prevent="updateStatus({{ $task->id }})">
+                        <i class="bi bi-journal-check text-success"></i>
+                    </button>&nbsp;
+                    <button class="btn btn-sm" type="button"
                         wire:click.defer="$emit('showModal', 'project-task-edit', '{{ $task->id }}')">
                         <i class="bi bi-pencil text-primary"></i>
                     </button>&nbsp;
-                    <a href="#" class="link-danger"><i class="bi bi-x-square"></i></a>
+                    <button class="btn btn-sm" type="button" wire:click.prevent="deleteTask({{ $task->id }})"><i
+                            class="bi bi-x-square text-danger"></i></button>
                 </div>
             </div>
         </div>

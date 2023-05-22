@@ -23,18 +23,17 @@
 
     <div class="card-footer bg-transparent ">
         <div>
-            <span>project manager :</span>
+            &#8226;&nbsp;&nbsp;<span class="text-dark small">project manager : </span>
             <span class="badge bg-secondary text-white">
                 {{ $project->owner->name }}
             </span>
 
             &nbsp;&nbsp;&#8226;&nbsp;&nbsp;
-            <span class="text-secondary small">project member : </span>
-
+            <span class="text-dark small">project member : </span>
             @forelse ($project->tasks as $task)
             <span class="badge bg-light text-dark">{{ $task->user->name }}</span>
             @empty
-            <span>this project has no task owner</span>
+            <span class="badge bg-light text-dark">this project has no task</span>
             @endforelse
 
         </div>
